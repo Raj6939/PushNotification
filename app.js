@@ -42,7 +42,7 @@ messaging.onMessage(res=>{
               title:title,
               body:msg,
               icon:'unknown.png',
-              click_action:"https://www.hypermine.in/"
+              link:"https://www.hypermine.in/"
           }
         
       }
