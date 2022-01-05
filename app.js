@@ -41,8 +41,7 @@ messaging.onMessage(res=>{
           notification:{
               title:title,
               body:msg,
-              icon:'unknown.png',
-              link:"https://www.hypermine.in/"
+              icon:'unknown.png'
           }
         
       }
