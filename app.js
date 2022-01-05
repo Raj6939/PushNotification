@@ -22,10 +22,21 @@ const firebaseConfig = {
                 console.log(currentToken);
                 document.getElementById("token").innerHTML=
                 currentToken;
+                var tokenId=currentToken;
+                var name =document.getElementById('name').value
+                firebase.database().ref('Tokens/'+name).set({
+                    TokenOfParticipant: tokenId
+                });
             })
           }
       })
 
+  }
+  function getname(){
+  var participant=document.getElementById('participant').value
+  firebase.database().ref('Tokens/'+participant).on('value',function(snapshot){
+    document.getElementById('token').value= snapshot.val().TokenOfParticipant;
+});
   }
 messaging.onMessage(res=>{
     console.log(res);
