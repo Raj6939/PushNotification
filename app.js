@@ -43,13 +43,7 @@ messaging.onMessage(res=>{
               body:msg,
               icon:'unknown.png'
           },
-          webpush:{
-              fcm_options:{
-                  link:"https://www.hypermine.in/"
-              }
-          }
-        
-      }
+        }
       let options={
           method:"POST",
           headers: new Headers({
