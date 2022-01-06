@@ -47,31 +47,17 @@ messaging.onMessage(res=>{
       const title = document.getElementById('title').value
       const msg =document.getElementById('msg').value
       
-    //   let body={
-    //       to:token,
-    //       notification:{
-    //           title:title,
-    //           body:msg,
-    //           icon:'unknown.png'
-    //       },
-    //           fcm_options: {
-    //           link: "https://www.hypermine.in/"
-    //       }
-    // }
-   let body= {
-        "message": {
-          "token": `${token}`,
-          "notification": {
-            "title": `${title}`,
-            "body": `${msg}`
+      let body={
+          to:token,
+          notification:{
+              title:title,
+              body:msg,
+              icon:'unknown.png'
           },
-          "webpush": {
-            "fcm_options": {
-              "link": "https://www.hypermine.in/"
-            }
+              fcm_options: {
+              link: "https://www.hypermine.in/"
           }
-        }
-      }
+    }
       
   
       let options={
@@ -81,8 +67,7 @@ messaging.onMessage(res=>{
               "key=AAAAYAnpTEs:APA91bHcD8QWjhjvERc88fNXy5_rXq8CdN9MPA0LvZ58XeyDTL4-k3a-QlEr5hq4pZ3Pw1RwTJH-4nwKyD9u17FySLVESWDOVx_qW5keCwgv1tWOahgmrwRevBcJV6vzPRlLLLlOwIgc",
               "Content-Type": "application/json"
           }),
-          body
-        //   body:JSON.stringify(body)
+          body:JSON.stringify(body)
       }
       fetch("https://fcm.googleapis.com/fcm/send",options).then(res=>{
         // console.log("SENT");    
