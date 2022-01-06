@@ -30,7 +30,7 @@ messaging.onBackgroundMessage(function(payload) {
     
 });
 messaging.onMessage(payload=>{
-  alert(payload);
+  console.log(payload);
   })
 self.addEventListener('notificationclick', function(event) {
   console.log('[Service Worker] Notification click Received.');
