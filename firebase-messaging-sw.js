@@ -16,19 +16,19 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
-messaging.onBackgroundMessage(function(payload) {
-  console.log('[firebase-messaging-sw.js] Received background message ', payload);
-  // Customize notification here
-  const notificationTitle = 'HyperFyre';
-  const notificationOptions = {
-    body: 'Hello From HyperFyre.',
-    icon: 'unknown.png'
-  };
+// messaging.onBackgroundMessage(function(payload) {
+//   console.log('[firebase-messaging-sw.js] Received background message ', payload);
+//   // Customize notification here
+//   const notificationTitle = 'HyperFyre';
+//   const notificationOptions = {
+//     body: 'Hello From HyperFyre.',
+//     icon: 'unknown.png'
+//   };
 
-  self.registration.showNotification(notificationTitle,
-    notificationOptions);
+//   self.registration.showNotification(notificationTitle,
+//     notificationOptions);
     
-});
+// });
 
 self.addEventListener('notificationclick', function(event) {
   console.log('[Service Worker] Notification click Received.');

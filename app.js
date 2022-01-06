@@ -53,9 +53,6 @@ messaging.onMessage(res=>{
               title:title,
               body:msg,
               icon:'unknown.png'
-          },
-              fcm_options: {
-              link: "https://www.hypermine.in/"
           }
     }
       
