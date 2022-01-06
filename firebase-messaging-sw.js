@@ -15,3 +15,27 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
+
+messaging.onBackgroundMessage(function(payload) {
+  console.log('[firebase-messaging-sw.js] Received background message ', payload);
+  // Customize notification here
+  const notificationTitle = 'HyperFyre';
+  const notificationOptions = {
+    body: 'Hello From HyperFyre.',
+    icon: 'unknown.png'
+  };
+
+  self.registration.showNotification(notificationTitle,
+    notificationOptions);
+    
+});
+
+self.addEventListener('notificationclick', function(event) {
+  console.log('[Service Worker] Notification click Received.');
+
+  event.notification.close();
+
+  event.waitUntil(
+      clients.openWindow('https://www.hypermine.in/')
+  );
+});
