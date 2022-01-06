@@ -21,7 +21,7 @@ messaging.onBackgroundMessage(function(payload) {
   // Customize notification here
   const notificationTitle = 'HyperFyre';
   const notificationOptions = {
-    body: 'Hello From HyperFyre background message.',
+    body: 'Hello From HyperFyre.',
     icon: 'unknown.png'
   };
 
@@ -29,9 +29,6 @@ messaging.onBackgroundMessage(function(payload) {
     notificationOptions);
     
 });
-messaging.onMessage(payload=>{
-  console.log(payload);
-  })
 self.addEventListener('notificationclick', function(event) {
   console.log('[Service Worker] Notification click Received.');
 
