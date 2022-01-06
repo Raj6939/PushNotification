@@ -40,6 +40,7 @@ const firebaseConfig = {
   }
 messaging.onMessage(res=>{
     console.log(res);
+    console.log("Hi");
 })
 
   function sendNotification(){
