@@ -29,19 +29,9 @@ messaging.onBackgroundMessage(function(payload) {
     notificationOptions);
     
 });
-messaging.onMessage(function(payload){
-  console.log('[firebase-messaging-sw.js] Received on message ', payload);
-  // Customize notification here
-  const notificationTitle = 'HyperFyre';
-  const notificationOptions = {
-    body: 'Hello From HyperFyre onmessage.',
-    icon: 'unknown.png'
-  };
-
-  self.registration.showNotification(notificationTitle,
-    notificationOptions);
-  });
-
+messaging.onMessage(payload=>{
+  alert(payload);
+  })
 self.addEventListener('notificationclick', function(event) {
   console.log('[Service Worker] Notification click Received.');
 

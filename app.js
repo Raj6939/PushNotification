@@ -38,9 +38,7 @@ const firebaseConfig = {
     document.getElementById('token').value= snapshot.val().TokenOfParticipant;
 });
   }
-// messaging.onMessage(res=>{
-//     console.log(res);
-// })
+
 
   function sendNotification(){
       const token =document.getElementById('token').value
