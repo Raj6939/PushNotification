@@ -44,16 +44,11 @@ messaging.onMessage(res=>{
 
   function sendNotification(){
       const token =document.getElementById('token').value
-      const title = document.getElementById('title').value
-      const msg =document.getElementById('msg').value
+    //   const title = document.getElementById('title').value
+    //   const msg =document.getElementById('msg').value
       
       let body={
           to:token,
-          notification:{
-              title:title,
-              body:msg,
-              icon:'unknown.png'
-          }
     }
       
   
